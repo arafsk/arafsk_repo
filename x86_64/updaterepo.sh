@@ -3,7 +3,7 @@
 rm personal_repo*
 
 echo "repo-add"
-repo-add personal_repo.db.tar.gz *.pkg.tar.zst
+repo-add personal_repo.db.tar.gz ./*.pkg.tar.zst
 
 sleep 1
 
