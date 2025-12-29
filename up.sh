@@ -5,6 +5,8 @@ workdir=$(pwd)
 
 cd x86_64/
 sh updaterepo.sh
+ln -sf arafsk_repo.db.tar.gz arafsk_repo.db
+ln -sf arafsk_repo.files.tar.gz arafsk_repo.files
 cd ..
 
 # Below command will backup everything inside the project folder
