@@ -3,7 +3,7 @@
 rm arafsk_repo*
 
 echo "repo-add"
-repo-add -n -R arafsk_repo.db.tar.gz *.pkg.tar.zst
+repo-add arafsk_repo.db.tar.gz *.pkg.tar.zst
 
 sleep 1
 
