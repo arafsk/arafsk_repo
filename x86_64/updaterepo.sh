@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm personal_repo*
+rm arafsk_repo*
 
 echo "repo-add"
-repo-add personal_repo.db.tar.gz ./*.pkg.tar.zst
+repo-add arafsk_repo.db.tar.gz ./*.pkg.tar.zst
 
 sleep 1
 
