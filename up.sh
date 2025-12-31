@@ -13,7 +13,7 @@ git add --all .
 git commit -m "update"
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-git push -u origin "$branch"
+git push -f origin "$branch"
 
 echo
 tput setaf 6
