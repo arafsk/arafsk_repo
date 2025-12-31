@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -eo pipefail
 
 workdir=$(pwd)
 
@@ -7,21 +7,18 @@ cd x86_64/
 sh updaterepo.sh
 cd ..
 
-# Below command will backup everything inside the project folder
+##################################################################################################################
+# Git workflow
 git add --all .
-
-# Committing to the local repository with a message containing the time details and commit text
-
 git commit -m "update"
 
-# Push the local files to github
-
-git push origin main
+branch=$(git rev-parse --abbrev-ref HEAD)
+git push -u origin "$branch"
 
 echo
 tput setaf 6
 echo "##############################################################"
-echo "###################  $(basename $0) done"
+echo "###################  $(basename "$0") done"
 echo "##############################################################"
 tput sgr0
 echo
