@@ -8,7 +8,7 @@ sleep 1
 
 echo "repo-add"
 
-repo-add --verify --sign -R $REPO_NAME.db.tar.gz *.pkg.tar.zst
+repo-add $REPO_NAME.db.tar.gz *.pkg.tar.zst
 
 #repo-add $REPO_NAME.db.tar.gz *.pkg.tar.zst
 
