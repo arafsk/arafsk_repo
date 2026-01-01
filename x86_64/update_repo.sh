@@ -2,16 +2,18 @@
 
 REPO_NAME="arafsk_repo"
 
-rm *.db *.db.sig *.db.tar.gz *.db.tar.gz.sig *.files *.files.sig *.files.tar.gz *.files.tar.gz.sig
+rm arafsk_repo*
 
 sleep 1
 
 echo "repo-add"
 
-repo-add $REPO_NAME.db.tar.gz *.pkg.tar.zst
-
-#repo-add $REPO_NAME.db.tar.gz *.pkg.tar.zst
-
+repo-add -n -R -v $REPO_NAME.db.tar.gz *.pkg.tar.zst
+rm -v $REPO_NAME.db
+rm -v $REPO_NAME.files
+mv -v $REPO_NAME.db.tar.gz $REPO_NAME.db
+mv -v $REPO_NAME.files.tar.gz $REPO_NAME.files
+cd ..
 echo "####################################"
 echo "Repo Updated!!"
 echo "####################################"
