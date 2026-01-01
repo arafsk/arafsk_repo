@@ -5,13 +5,25 @@ sh update_repo.sh
 cd ..
 
 ##################################################################################################################
-# Git workflow
+
+
+# Below command will backup everything inside the project folder
 git add --all .
+
 git commit -m "update"
 
-branch=$(git rev-parse --abbrev-ref HEAD)
-git push -f origin "$branch"
+# Push the local files to github
 
-echo "####################################"
-echo "Repo Updated!!"
-echo "####################################"
+if grep -q main .git/config; then
+	echo "Using main"
+		git push -u origin main
+fi
+
+if grep -q master .git/config; then
+	echo "Using master"
+		git push -u origin master
+fi
+
+echo "################################################################"
+echo "###################    Git Push Done      ######################"
+echo "################################################################"
